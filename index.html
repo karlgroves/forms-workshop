@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Pizza Form</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" media="all">
+</head>
+
+<body>
+    <main>
+        <h1>Place Your Order</h1>
+        <section id="globalErrors">
+            <h2></h2>
+
+        </section>
+
+        <section id="pizza-form">
+
+
+        </section>
+
+    </main>
+    <script>
+        $(document).ready(function() {
+            var tehButton = $('#submit');
+            tehButton.click(function() {
+
+                // Fake validation stuff
+                let numErr = 4;
+                let errorMessage = 'Error:' + numErr + ' errors are preventing successful submission of this form';
+
+                $('.error').show();
+                $('.next').show();
+
+                $(failedFields).attr({
+                    'aria-invalid': 'true'
+                });
+                
+                $('title').text(errorMessage);
+                $('#globalErrors h2').text(errorMessage)
+
+                // show validation message
+                $('#globalErrors')
+                    .attr({
+                        'role': 'alert'
+                    })
+                    .attr('tabindex', '-1')
+                    .focus();
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
